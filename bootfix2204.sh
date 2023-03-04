@@ -43,12 +43,12 @@ function moveUseVesaFile() {
   echo -e "Copying ${vesaFile} to proper location"
   sudo cp ${vesaFile} ${useVesaFinalDir}
 
-  checkStatus "File Moved Successfully" "File Move Failed"
+  checkStatus "File ${vesaFile} Moved Successfully" "File ${vesaFile} Move Failed"
   userPrompt
 }
 
 createUseVesaFile
-#moveUseVesaFile
+moveUseVesaFile
 
 #################################################################################
 # for nomodeset addition
@@ -63,7 +63,7 @@ function backupGrubDefaultFile() {
 
   # make backup grub config file from the start
   echo -e "Making backup of default grub config file"
-  sudo cp ${defaultGrubFile} /etc/default/grub_backup
+  sudo cp ${defaultGrubFile} "/etc/default/grub_backup"
 
   checkStatus "Grub Default config file created" "Error creating grub default backup file"
 
